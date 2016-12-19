@@ -21,4 +21,10 @@ class Controller_Books extends Controller
 		}
 		
 	}
+	function action_search()
+	{
+		$data = array();
+        $data = json_decode($_POST['data']);
+        $this->view->generate_partial('customer_views/cbook_partial_view.php', $this->model->search_books($data));
+	}
 }

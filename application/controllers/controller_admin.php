@@ -10,7 +10,7 @@ class Controller_Admin extends Controller
     }
     function action_index()
 	{	
-		$this->view->generate('admin_views/admin_view.php', 'template_view.php', null, false);
+		 $this->view->generate('admin_views/book_view.php', 'template_view.php', $this->model->get_all_books(), false);
 	}
     function action_book()
     {

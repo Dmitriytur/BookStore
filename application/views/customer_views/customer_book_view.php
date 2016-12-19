@@ -5,7 +5,7 @@
 	<div class="col-md-4">
 		<form class="form-inline search-form">
 			<input type="text" class="form-control" id="search" placeholder="Search...">
-			<button type="submit" class="btn btn-default">Search</button>
+			<button type="button" onclick="search_book()"  class="btn btn-default">Search</button>
 		</form>
 	</div>
 	<div class="col-md-12 v-space"></div>
@@ -16,9 +16,4 @@
 		?>
 	</div>
 </div>
-<script>
-	function openDetails(id)
-	{
-		document.location.href = "/books/details?id=" + id;
-	}
-</script>
+<script src = "/js/book_information.js"></script>
