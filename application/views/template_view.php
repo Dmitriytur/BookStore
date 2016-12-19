@@ -12,7 +12,16 @@
 	<script src = "/js/jquery.json.js"></script>
 </head>
 <body>
-	<?php include 'application/views/header.php' ?>
-	<?php include 'application/views/'.$content_view; ?>
+	<?php
+	if ($header == '')
+	{
+		include 'application/views/header.php';
+	}
+	else
+	{
+		include 'application/views/' . $header;
+	}
+	include 'application/views/'.$content_view; 
+	?>
 </body>
 </html>
