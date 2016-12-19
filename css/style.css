@@ -16,3 +16,43 @@
 .illustration-margin {
 	margin-top: 30px;
 }
+.margin-bottom-title-user {
+	margin-top: 10px;
+	margin-bottom: 25px;
+}
+.bold {
+	font-weight: bold;
+}
+.btn-danger {
+	margin-top: 15px;
+}
+#search {
+	width: 260px;
+	margin-right: 10px;
+}
+.search-form {
+	float: right;
+}
+.back-reference {
+	margin-left: 15px;
+	margin-top: 20px;
+}
+.big-title {
+	font-size: 100px;
+	margin-top: 80px;
+}
+.image-main {
+	float: right;
+	margin-top: 10px;
+}
+.quote {
+	text-align: right;
+	margin-top: 40px;
+}
+.down {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.little-down {
+	margin-bottom: 20px;
+}
