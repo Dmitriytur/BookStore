@@ -11,7 +11,7 @@ while ($row = $data->fetchArray())
                     <p> <span class="thumbnail-bold">Pages: </span>' .  $row['Pages'] . '</p>
                     <p> <span class="thumbnail-bold">Images: </span>' .  $row['Images'] . '</p>
                     <p> <span class="thumbnail-bold">Price: </span>' .  $row['Price'] . '</p>
-                    <button type="button" onclick="delete_book(' . $row['Id'] .  ')" class="btn btn-danger">Delete</button>
+                    <button type="button" onclick="openDetails(' . $row['Id'] .')" class="btn btn-danger">Details</button>
                 </div>
             </div>
         </div>';

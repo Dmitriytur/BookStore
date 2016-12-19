@@ -3,17 +3,24 @@ class Route
 {
 	static function start()
 	{
-		$controller_name = 'Main';
+		$controller_name = 'Home';
 		$action_name = 'index';
 		
-		$routes = explode('/', $_SERVER['REQUEST_URI']);
+		$request = parse_url($_SERVER['REQUEST_URI']);
+		if (isset($request['query']))
+		{
+			parse_str($request['query'], $params);
+		}
+		
+
+		$routes = explode('/', $request['path']);
 		
 		if ( !empty($routes[1]) )
 		{	
 			$controller_name = $routes[1];
 		}
-		
-		if ( !empty($routes[2]) )
+
+		if ( !empty($routes[2]))
 		{
 			$action_name = $routes[2];
 		}
@@ -38,24 +45,32 @@ class Route
 		}
 		else
 		{
-			return;
 			Route::ErrorPage404();
+			return;
 		}
-		
+
 		$controller = new $controller_name;
 		$action = $action_name;
 		
 		if(method_exists($controller, $action))
 		{
-			$controller->$action();
+			if (isset($params))
+			{
+				$controller->$action($params);
+			}
+			else
+			{
+				$controller->$action();
+			}
 		}
 		else
 		{
-			return;
 			Route::ErrorPage404();
+			return;
 		}
 	
 	}
+
 	
 	static function ErrorPage404()
 	{
@@ -64,4 +79,6 @@ class Route
 		header("Status: 404 Not Found");
 		header('Location:'.$host.'404');
     }
+
+
 }

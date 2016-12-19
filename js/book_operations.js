@@ -45,12 +45,9 @@ $(document).ready(function(){
         });
     });
 });
-function delete_book()
+function delete_book(id)
 {
-    var id = $("#book_id").val(); 
         var data = JSON.stringify([id]);
-
-
         $.ajax({
             url: '/admin/delete_book',
             type: 'post',

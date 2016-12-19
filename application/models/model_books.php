@@ -1,8 +1,9 @@
 <?php
 require_once ('application/repositories/book_repository.php');
-class Model_Admin extends Model
+class Model_Books extends Model
 {
     public $books_rep;
+
     function __construct()
     {
         $this->books_rep = new Book_Repository();
@@ -13,14 +14,8 @@ class Model_Admin extends Model
         return $this->books_rep->get_all_books();
     }
 
-    function add_book($book)
+    function get_book_by_id($id)
     {
-        $this->books_rep->add_book($book);
-    }
-
-    function delete_book($data)
-    {    
-        $this->books_rep->delete_book($data[0]);
-
+        return $this->books_rep->get_book_by_id($id);
     }
 }

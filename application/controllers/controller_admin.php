@@ -10,15 +10,15 @@ class Controller_Admin extends Controller
     }
     function action_index()
 	{	
-		$this->view->generate('admin_views/book_view.php', 'template_view.php');
+		$this->view->generate('admin_views/admin_view.php', 'template_view.php', null, false);
 	}
     function action_book()
     {
-        $this->view->generate('admin_views/book_view.php', 'template_view.php', $this->model->get_all_books());
+        $this->view->generate('admin_views/book_view.php', 'template_view.php', $this->model->get_all_books(), false);
     }
     function action_magazine()
     {
-        $this->view->generate('admin_views/magazine_view.php', 'template_view.php');
+        $this->view->generate('admin_views/magazine_view.php', 'template_view.php', null, false);
     }
 
     function action_add_book()

@@ -13,13 +13,9 @@
 </head>
 <body>
 	<?php
-	if ($header == '')
+	if ($header)
 	{
 		include 'application/views/header.php';
-	}
-	else
-	{
-		include 'application/views/' . $header;
 	}
 	include 'application/views/'.$content_view; 
 	?>

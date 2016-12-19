@@ -22,8 +22,9 @@ class Book_Repository
 
     function get_book_by_id($id)
     {
-        $request = $this->db->prepare('SELECT * FROM Books WHERE Id=?;');
-        $result = $request->execute(array($id));
+        $request = $this->db->prepare('SELECT * FROM Books WHERE Id=:id;');
+        $request->bindValue(':id', $id);
+        $result = $request->execute();
         if (!$result)
         {
             return;
