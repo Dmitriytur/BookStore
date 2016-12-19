@@ -38,6 +38,7 @@ class Route
 		}
 		else
 		{
+			return;
 			Route::ErrorPage404();
 		}
 		
@@ -50,6 +51,7 @@ class Route
 		}
 		else
 		{
+			return;
 			Route::ErrorPage404();
 		}
 	

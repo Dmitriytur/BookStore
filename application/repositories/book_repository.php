@@ -11,8 +11,8 @@ class Book_Repository
 
     public function get_all_books()
     {
-        $query = $this->db->prepare('SELECT * FROM Books');
-        $result = $query->execute();
+        $request = $this->db->prepare('SELECT * FROM Books');
+        $result = $request->execute();
         if (!$result)
         {
             return;
@@ -22,8 +22,8 @@ class Book_Repository
 
     function get_book_by_id($id)
     {
-        $query = $this->db->prepare('SELECT * FROM Books WHERE Id=?;');
-        $result = $query->execute(array($id));
+        $request = $this->db->prepare('SELECT * FROM Books WHERE Id=?;');
+        $result = $request->execute(array($id));
         if (!$result)
         {
             return;
@@ -33,9 +33,14 @@ class Book_Repository
     
     function add_book($book)
     {
-        $query = $this->db->prepare('INSERT INTO Books VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ? );');
-        $result = $query->execute(array($book[0], $book[1], $book[2], $book[3], 
-        $book[4], $book[5], $book[6], $book[7], $book[8], $book[9]));
+        $request = $this->db->prepare('INSERT INTO Books 
+        (Name, Author, Year, Genre, Price, Amount, Binding, Pages, Images, Annotation)
+        VALUES (:0, :1, :2, :3, :4, :5, :6, :7, :8, :9);');
+        for ($i = 0; $i < 10; $i++)
+        {
+            $request->bindValue(':' . $i, $book[$i]);
+        }
+        $result = $request->execute();
         if (!$result)
         {
             return;
@@ -43,9 +48,10 @@ class Book_Repository
         return $result;
     }
 
-    function delete_book($Id)
+    function delete_book($id)
     {
-        $query = $this->db->prepare('DELETE FROM Books WHERE Id=?;');
-        $result = $query->execute(array($Id));
+        $request = $this->db->prepare('DELETE FROM Books WHERE Id=:id;');
+        $request->bindValue(':id', $id);
+        $result = $request->execute();
     }
 }

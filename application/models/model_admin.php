@@ -2,23 +2,27 @@
 require_once ('application/repositories/book_repository.php');
 class Model_Admin extends Model
 {
-    private $books;
+    public $books_rep;
     function __construct()
     {
-        $this->books = new Book_Repository();
+        $this->books_rep = new Book_Repository();
     }
 
-    public function get_all_books()
+    function get_all_books()
     {
-        return $this->books->get_all_books();
+        return $this->books_rep->get_all_books();
     }
 
-    public function add_book($book)
+    function add_book($book)
     {
-        $this->books->add_book($book);
+        $this->books_rep->add_book($book);
     }
 
+    function delete_book($data)
+    {    
+        $this->books_rep->delete_book($data[0]);
 
+    }
 
 
 

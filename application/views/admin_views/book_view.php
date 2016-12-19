@@ -62,71 +62,26 @@
 	<div class="col-md-12 v-space"></div>
 	<hr/>
 	<div class="col-md-12 center margin-bottom-title"><h2>All books</h2></div>
+	<div id="container_books">
 	<?php
 		while ($row = $data->fetchArray()) 
 		{
 			echo '<div class="col-md-4">
 					<div class="thumbnail">
 						<div class="caption">
-							<h3>Name of the book</h3>
+							<h3>' . $row['Name'] . '</h3>
 							<hr/>
 							<p> <span class="thumbnail-bold">Author: </span>' .  $row['Author'] . '</p>
 							<p> <span class="thumbnail-bold">Pages: </span>' .  $row['Pages'] . '</p>
 							<p> <span class="thumbnail-bold">Images: </span>' .  $row['Images'] . '</p>
 							<p> <span class="thumbnail-bold">Price: </span>' .  $row['Price'] . '</p>
-							<button type="button" class="btn btn-danger">Delete</button>
+							<input id="book_id" type="hidden" value="' . $row['Id'] . '">
+							<button id="delete_btn" type="button" onclick="delete_book()" class="btn btn-danger">Delete</button>
 						</div>
 					</div>
 				</div>';
 		}
 	?>
-	
+	</div>
 </div>
-<script>
-$(document).ready(function(){
-    $("#add").click(function(){
-        var name = $("#name").val(); 
-        var author = $("#author").val();
-        var year = $("#year").val();
-		var genre = $("#genre").val(); 
-        var price = $("#price").val();
-        var amount = $("#amount").val();
-        var pages = $("#pages").val();
-		var annotation = $("#annotation").val();
-
-		var binding;
-		if ($("#flexible").is(":checked"))
-		{
-			binding = "flexible";
-		}
-		else 
-		{
-			binding = "stiff";
-		}
-		var images;
-		if ($("#coloured").is(":checked"))
-		{
-			images = "coloured";
-		}
-		else if ($("#black_and_white").is(":checked"))
-		{
-			images = "black_and_white";
-		}
-		else
-		{
-			images = "without";
-		}
-
-        var data = JSON.stringify([name, author, year, genre, price, amount, binding, pages, images, annotation]);
-
-        $.ajax({
-            url: '/admin/add_book',
-            type: 'post',
-            dataType: 'json',
-            data: 'data=' + data,
-			//response - ответ сервера, который будет в объекте
-            success: function(response) { console.log("123");}
-        });
-    });
-});
-</script>
+<script src = "/js/book_operations.js"></script>
