@@ -31,6 +31,18 @@ class Book_Repository
         }
         return $result;
     }
+
+    function search_books_by_name($name)
+    {
+        $request = $this->db->prepare('SELECT * FROM Books WHERE Name LIKE :name;');
+        $request->bindValue(':name', '%' . $name . '%');
+        $result = $request->execute();
+        if (!$result)
+        {
+            return;
+        }
+        return $result;
+    }
     
     function add_book($book)
     {

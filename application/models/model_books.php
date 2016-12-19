@@ -18,4 +18,8 @@ class Model_Books extends Model
     {
         return $this->books_rep->get_book_by_id($id);
     }
+    function search_books($data)
+    {
+         return $this->books_rep-> search_books_by_name($data[0]);
+    }
 }
