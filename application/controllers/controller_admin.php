@@ -36,4 +36,6 @@ class Controller_Admin extends Controller
         $this->model->delete_book($data);
         $this->view->generate_partial('admin_views/book_list_partial_view.php', $this->model->get_all_books());
     }
+
+    
 }

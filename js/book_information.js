@@ -1,7 +1,3 @@
-function openDetails(id)
-{
-    document.location.href = "/books/details?id=" + id;
-}
 function search_book()
 {
         var name = document.getElementById('search').value;

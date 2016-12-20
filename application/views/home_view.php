@@ -23,7 +23,7 @@
 				<img class="img-rounded little-down" src="img/book1.jpg" alt="book1" />
 				<p><span class="thumbnail-bold">Name: </span>The lord of the rings</p>
 				<p><span class="thumbnail-bold">Author: </span>J. R. R. Tolkien</p>
-				<a href="details_book.html">
+				<a href="/books/details?id=50">
 					<button type="button" class="btn btn-danger">Details</button>
 				</a>
 			</div>
@@ -35,7 +35,7 @@
 				<img class="img-rounded little-down" src="img/book2.jpg" alt="book2" />
 				<p><span class="thumbnail-bold">Name: </span>The green mile</p>
 				<p><span class="thumbnail-bold">Author: </span>Stephen King</p>
-				<a href="details_book.html">
+				<a href="/books/details?id=51">
 					<button type="button" class="btn btn-danger">Details</button>
 				</a>
 			</div>
@@ -47,7 +47,7 @@
 				<img class="img-rounded little-down" src="img/book3.jpg" alt="book3" />
 				<p><span class="thumbnail-bold">Name: </span>The Master and Margarita</p>
 				<p><span class="thumbnail-bold">Author: </span>Mikhail Bulgakov</p>
-				<a href="details_book.html">
+				<a href="/books/details?id=52">
 					<button type="button" class="btn btn-danger">Details</button>
 				</a>
 			</div>
