@@ -1,3 +1,4 @@
+<?php include 'application/views/header.php'?>
 <div class="container">
 	<div class="center margin-bottom-title-user"><h2>Books</h2></div>
 	<div class="col-md-12"></div>
