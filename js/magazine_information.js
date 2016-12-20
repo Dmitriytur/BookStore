@@ -1,14 +1,14 @@
-function search_book()
+function search_magazine()
 {
         var name = document.getElementById('search').value;
         var data = JSON.stringify([name]);
         $.ajax({
-            url: '/books/search',
+            url: '/magazines/search',
             type: 'post',
             dataType: 'json',
             data: 'data=' + data,
             success: function(response) {
-                $('#container_books').html(response.html);
+                $('#container_magazines').html(response.html);
             }
         });
 }

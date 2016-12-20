@@ -1,4 +1,5 @@
 <?php
+include 'application/views/header.php';
 $book = $data->fetchArray();
 echo 
 '<div class="container">

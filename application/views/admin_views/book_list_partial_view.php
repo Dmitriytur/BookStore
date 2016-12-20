@@ -1,7 +1,13 @@
 <?php
 $partial_view_result = "";
+$i = 0;
 while ($row = $data->fetchArray()) 
 {
+    $i++;
+    if ($i == 1)
+    {
+        $partial_view_result = $partial_view_result . '<div class="row">';
+    }
     $partial_view_result = $partial_view_result . '<div class="col-md-4">
             <div class="thumbnail">
                 <div class="caption">
@@ -15,4 +21,9 @@ while ($row = $data->fetchArray())
                 </div>
             </div>
         </div>';
+    if ($i == 3)
+    {
+         $partial_view_result = $partial_view_result . '</div>';
+         $i = 0;
+    }
 }

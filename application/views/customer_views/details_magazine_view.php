@@ -1,10 +1,14 @@
-<div class="container">
+<?php
+include 'application/views/header.php';
+$magazine = $data->fetchArray();
+echo 
+'<div class="container">
 	<div class="back-reference">
-		<a href="customer_book.html">< Back to the magazines</a>
+		<a href="/magazines">< Back to the magazines</a>
 	</div>
 	<div class="col-md-12 v-space"></div>
 	<div class="col-md-6">
-		<p> <span class="bold">Name: </span>"War and peace"</p>
+		<p> <span class="bold">Name: </span>' . $magazine['Name'] . '</p>
 		<p> <span class="bold">Number: </span>12</p>
 		<p> <span class="bold">Month: </span>11</p>
 		<p> <span class="bold">Year: </span>2002</p>
@@ -21,9 +25,9 @@
 		</a>
 	</div>
 	<div class="col-md-6">
-		<img src="img/book_grey.png" alt="magazines picture"/>
+		<img src="/img/book_grey.png" alt="magazines picture"/>
 	</div>
 		<div class="col-md-12 v-space"></div>
 		<div class="col-md-12 v-space"></div>
 </div>
-</div>
+</div>';
