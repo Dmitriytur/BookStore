@@ -93,3 +93,13 @@
 .height-textarea {
 	height: 150px !important;
 }
+.registration {
+	margin-top: 30px;
+}
+.registration h2 {
+	margin-bottom: 30px;
+}
+.right-btn {
+	float: right;
+	width: 120px;
+}
