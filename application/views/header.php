@@ -6,6 +6,7 @@
     <ul class="nav navbar-nav">
       <li><a href="/home">Home</a></li>
       <li><a href="/books">Books</a></li>
+      <li><a href="/magazines">Magazines</a></li>
       <li><a href="/contacts">Contacts</a></li>
     </ul>
   </div>

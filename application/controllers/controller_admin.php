@@ -10,15 +10,15 @@ class Controller_Admin extends Controller
     }
     function action_index()
 	{	
-		 $this->view->generate('admin_views/book_view.php', 'template_view.php', $this->model->get_all_books(), false);
+		 $this->view->generate('admin_views/book_view.php', 'template_view.php', $this->model->get_all_books());
 	}
     function action_book()
     {
-        $this->view->generate('admin_views/book_view.php', 'template_view.php', $this->model->get_all_books(), false);
+        $this->view->generate('admin_views/book_view.php', 'template_view.php', $this->model->get_all_books());
     }
     function action_magazine()
     {
-        $this->view->generate('admin_views/magazine_view.php', 'template_view.php', null, false);
+        $this->view->generate('admin_views/magazine_view.php', 'template_view.php', $this->model->get_all_magazines());
     }
 
     function action_add_book()
@@ -35,6 +35,22 @@ class Controller_Admin extends Controller
         $data = json_decode($_POST['data']);
         $this->model->delete_book($data);
         $this->view->generate_partial('admin_views/book_list_partial_view.php', $this->model->get_all_books());
+    }
+
+    function action_add_magazine()
+    {
+        $data = array();
+        $data = json_decode($_POST['data']);
+        $this->model->add_magazine($data);
+        $this->view->generate_partial('admin_views/magazine_list_partial_view.php', $this->model->get_all_magazines());
+    }
+
+    function action_delete_magazine()
+    {
+        $data = array();
+        $data = json_decode($_POST['data']);
+        $this->model->delete_magazine($data);
+        $this->view->generate_partial('admin_views/magazine_list_partial_view.php', $this->model->get_all_magazines());
     }
 
     
