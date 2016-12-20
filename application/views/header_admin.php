@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default red">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="/home">Noosphere</a>
