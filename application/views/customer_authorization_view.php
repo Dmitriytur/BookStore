@@ -8,7 +8,7 @@
 					<h2>Authorization</h2>
 					<input type="email" class="form-control" id="email" name="email" required placeholder="Email"><br/>
 					<input type="password" class="form-control" id="password" name="password" required placeholder="Password"><br/>
-					<input type="submit" class="btn btn-danger right-btn" id="authorize">Authorize</button>
+					<input type="submit" class="btn btn-success right-btn" id="authorize">Authorize</button>
 				</div>
 			</div>
 			<div class="col-md-4"></div>
