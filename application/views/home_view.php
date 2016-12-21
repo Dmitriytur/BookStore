@@ -25,7 +25,7 @@
 				<p><span class="thumbnail-bold">Name: </span>The lord of the rings</p>
 				<p><span class="thumbnail-bold">Author: </span>J. R. R. Tolkien</p>
 				<a href="/books/details?id=50">
-					<button type="button" class="btn btn-default">Details</button>
+					<button type="button" class="btn btn-danger">Details</button>
 				</a>
 			</div>
 		</div>
@@ -37,7 +37,7 @@
 				<p><span class="thumbnail-bold">Name: </span>The green mile</p>
 				<p><span class="thumbnail-bold">Author: </span>Stephen King</p>
 				<a href="/books/details?id=51">
-					<button type="button" class="btn btn-default">Details</button>
+					<button type="button" class="btn btn-danger">Details</button>
 				</a>
 			</div>
 		</div>
@@ -49,7 +49,7 @@
 				<p><span class="thumbnail-bold">Name: </span>The Master and Margarita</p>
 				<p><span class="thumbnail-bold">Author: </span>Mikhail Bulgakov</p>
 				<a href="/books/details?id=52">
-					<button type="button" class="btn btn-default">Details</button>
+					<button type="button" class="btn btn-danger">Details</button>
 				</a>
 			</div>
 		</div>

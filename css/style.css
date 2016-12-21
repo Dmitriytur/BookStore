@@ -27,11 +27,19 @@
 	margin-top: 15px;
 }
 #search {
-	width: 260px;
-	margin-right: 10px;
+	/*width: 260px;
+	margin-right: 10px;*/
 }
 .search-form {
-	float: right;
+
+}
+.search-form button{
+	width: 100%;
+	/*margin-left: -5%;*/
+}
+.search-form input{
+	width: 100% !important;
+	/*margin-left: -5%;*/
 }
 .back-reference {
 	margin-left: 15px;
@@ -102,4 +110,23 @@
 .right-btn {
 	float: right;
 	width: 120px;
+}
+.size-big {
+	width: 90%;
+}
+.pagination > .active > a, 
+.pagination > .active > a:focus, 
+.pagination > .active > a:hover, 
+.pagination > .active > span, 
+.pagination > .active > span:focus, 
+.pagination > .active > span:hover {
+    background-color: #5cb85c !important;
+    border-color: #5cb85c !important;
+	color: #fff !important;
+}
+.pagination > li > a, .pagination > li > span {
+    color: #616161 !important;
+}
+.search-form input {
+	margin-right: 30px;
 }

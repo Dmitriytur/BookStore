@@ -21,7 +21,7 @@ echo
 		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
 		id est laborum.</p>
 		<a href="#">
-			<button type="sumbit" class="btn btn-success center">Subscribe</button>
+			<button type="sumbit" class="btn btn-success">Subscribe</button>
 		</a>
 	</div>
 	<div class="col-md-6">

@@ -18,7 +18,7 @@ echo
 		<p> <span class="bold">Price: </span>' . $book['Price'] . '</p>
 		<p> <span class="bold">Annotation: </span>' . $book['Annotation'] . '</p>
 		<a href="#">
-			<button type="submit" class="btn btn-success center">Make an order</button>
+			<button type="submit" class="btn btn-success">Make an order</button>
 		</a>
 	</div>
 	<div class="col-md-6">
