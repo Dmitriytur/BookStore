@@ -18,7 +18,7 @@ while ($row = $data->fetchArray())
                     <p> <span class="thumbnail-bold">Images: </span>' .  $row['Images'] . '</p>
                     <p> <span class="thumbnail-bold">Price: </span>' .  $row['Price'] . '</p>
                     <a href="/books/details?id=' . $row['Id'] . '">
-                    <button type="button" class="btn btn-danger">Details</button>
+                    <button type="button" class="btn btn-dafault">Details</button>
                     </a>
                 </div>
             </div>

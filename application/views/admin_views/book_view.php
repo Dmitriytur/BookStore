@@ -58,7 +58,7 @@
 		<div class="row">
 			<div class="col-md-10"></div>
 			<div class="col-md-2">
-				<button type="button" class="btn btn-danger right" id="add">Add book</button>
+				<button type="button" class="btn btn-success right" id="add">Add book</button>
 			</div>
 		</div>
     </form>
