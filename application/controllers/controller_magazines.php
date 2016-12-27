@@ -22,8 +22,8 @@ class Controller_Magazines extends Controller
 	}
 	function action_search()
 	{
-		$data = array();
-        $data = json_decode($_POST['data']);
+		error_log($_GET['data']);
+		$data =  json_decode($_GET['data'], true);
         $this->view->generate_partial('customer_views/cmagazine_partial_view.php', $this->model->search_magazines($data));
 	}
 }

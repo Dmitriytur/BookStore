@@ -14,7 +14,7 @@ $book = $data->fetchArray();
 			<img class="img-rounded size-big"src="/img/book<?php echo $book['Id'] ?>.jpg" alt="book" />
 		</div>
 		<div class="col-md-6">
-			<<p> <span class="bold">Name: </span><?php  echo $book['Name']  ?></p>
+			<p> <span class="bold">Name: </span><?php  echo $book['Name']  ?></p>
 			<p> <span class="bold">Author: </span><?php  echo $book['Author'] ?></p>
 			<p> <span class="bold">Pages: </span><?php  echo $book['Pages'] ?></p>
 			<p> <span class="bold">Book cover: </span><?php  echo $book['Binding'] ?></p>

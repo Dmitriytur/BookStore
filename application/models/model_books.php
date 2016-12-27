@@ -20,6 +20,6 @@ class Model_Books extends Model
     }
     function search_books($data)
     {
-         return $this->books_rep-> search_books($data[0]);
+         return $this->books_rep->search_books($data);
     }
 }

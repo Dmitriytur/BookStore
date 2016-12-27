@@ -1,16 +1,85 @@
-function search_book()
-{
-        var name = document.getElementById('search_name').value;
-        var author = document.getElementById('search_author').value;
-        var genre = document.getElementById('search_genre').value;
-        var data = JSON.stringify([name, author, genre]);
+$(document).ready(function(){
+    $("#search").click(function(){
+		var binding;
+		if ($("#flexible").is(":checked"))
+		{
+			binding = "flexible";
+		}
+		else if ($("#stiff").is(":checked"))
+		{
+			binding = "stiff";
+		}
+        else
+        {
+            binding = "";
+        }
+		var images;
+		if ($("#coloured").is(":checked"))
+		{
+			images = "coloured";
+		}
+		else if ($("#black_and_white").is(":checked"))
+		{
+			images = "black_and_white";
+		}
+		else if ($("#without").is(":checked"))
+		{
+			images = "without";
+		}
+        else
+        {
+            images = "";
+        }
+
+        var pricesort;
+        if ($("#asc").is(":checked"))
+		{
+			pricesort = "asc";
+		}
+		else if ($("#desc").is(":checked"))
+		{
+			pricesort = "desc";
+		}
+        else
+        {
+            pricesort = "";
+        }
+         var formData = {
+            "name":$("#search_name").val(),
+            "author": $("#search_author").val(),
+            "genre":$("#search_genre").val(),
+            "flexible":$("#flexible").is(":checked"),
+            "stiff":$("#stiff").is(":checked"),
+            "coloured":$("#coloured").is(":checked"),
+            "black_and_white":$("#black_and_white").is(":checked"),
+            "without":$("#without").is(":checked"),
+            "pricesort":pricesort
+
+        };
         $.ajax({
             url: '/books/search',
-            type: 'post',
+            type: 'get',
             dataType: 'json',
-            data: 'data=' + data,
+            data: 'data=' + $.toJSON(formData),
             success: function(response) {
                 $('#container_books').html(response.html);
             }
         });
-}
+    });
+});
+
+$(document).ready(function(){
+    $("#clear").click(function(){
+
+        $("#search_name").val('');
+        $("#search_author").val('');
+        $("#search_genre").val('');
+        $("#flexible").prop('checked', false);
+        $("#stiff").prop('checked', false);
+        $("#coloured").prop('checked', false);
+        $("#black_and_white").prop('checked', false);
+        $("#without").prop('checked', false);
+        $("#asc").prop('checked', false);
+        $("#desc").prop('checked', false);
+    });
+});

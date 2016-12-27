@@ -17,7 +17,7 @@
 				</div>
 		</div>	
 		<div class="col-md-3">
-			<button type="button" onclick="search_book()" class="btn btn-success">Search</button>
+			<button type="button" id="search" class="btn btn-success">Search</button>
 		</div>
 	</form>
 	
@@ -45,24 +45,21 @@
 	<div class="col-md-3">
 		<div class="form-group">
 			<label for="binding">Bookbinding</label><br/>
-			<input type="radio" id="flexible" name="binding" value="flexible binding"> flexible binding<br/>
-			<input type="radio" id="stiff" name="binding" value="stiff binding"> stiff binding
+			<input type="checkbox" id="flexible" name="binding" value="flexible binding"> flexible binding<br/>
+			<input type="checkbox" id="stiff" name="binding" value="stiff binding"> stiff binding
 		</div>
 		<div class="form-group">
 			<label for="images">Illustration:</label><br/>
-			<input type="radio" id="coloured" name="images" value="coloured illustration"> coloured illustration<br/>
-			<input type="radio" id="black_and_white" name="images" value="black-and-white"> black-and-white illustration<br/>
-			<input type="radio" id="without" name="images" value="without"> without illustration
+			<input type="checkbox" id="coloured" name="images" value="coloured illustration"> coloured illustration<br/>
+			<input type="checkbox" id="black_and_white" name="images" value="black-and-white"> black-and-white illustration<br/>
+			<input type="checkbox" id="without" name="images" value="without"> without illustration
 		</div>
 		<div class="form-group">
 			<label for="images">Price:</label><br/>
 			<input type="radio" id="asc" name="price" value="coloured illustration"> ascending sort<br/>
 			<input type="radio" id="desc" name="price" value="black-and-white"> descending sort<br/>
 		</div>
-			
-		<a href="details_book.html">
-			<button type="button" class="btn btn-success"> Apply filters</button>
-		</a>
+		<button type="button" id="clear" class="btn btn-success">Clear filters</button>
 	</div>
 	<div class="col-md-12 v-space"></div>
 	<div class="col-md-12 v-space"></div>

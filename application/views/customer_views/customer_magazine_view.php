@@ -14,7 +14,7 @@
 					<input type="text" class="form-control" id="search_genre" placeholder="Search for the genre...">
 				</div>
 				<div class="col-md-4">
-					<button type="submit" class="btn btn-success">Search</button>
+					<button type="button" id="search" class="btn btn-success">Search</button>
 				</div>
 			</div>
 		</div>	
@@ -48,13 +48,10 @@
 			<input type="radio" id="asc" name="price" value="coloured illustration"> ascending sort<br/>
 			<input type="radio" id="desc" name="price" value="black-and-white"> descending sort<br/>
 		</div>
-			
-		<a href="details_book.html">
-			<button type="button" class="btn btn-success"> Apply filters</button>
-		</a>
+			<button type="button" id="clear" class="btn btn-success">Clear filters</button>
 	</div>
 	<div class="col-md-12 v-space"></div>
 	<div class="col-md-12 v-space"></div>
 </div>
-<script src = "/js/book_information.js"></script>
+<script src = "/js/magazine_information.js"></script>
 	

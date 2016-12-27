@@ -20,6 +20,6 @@ class Model_Magazines extends Model
     }
     function search_magazines($data)
     {
-         return $this->magazines_rep-> search_magazines_by_name($data[0]);
+         return $this->magazines_rep->search_magazines($data);
     }
 }

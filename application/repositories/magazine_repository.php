@@ -11,7 +11,7 @@ class Magazine_Repository
 
     public function get_all_magazines()
     {
-        $request = $this->db->prepare('SELECT * FROM Magazines');
+        $request = $this->db->prepare('SELECT * FROM Magazines ORDER BY Name');
         $result = $request->execute();
         if (!$result)
         {
@@ -32,10 +32,25 @@ class Magazine_Repository
         return $result;
     }
 
-    function search_magazines_by_name($name)
+    function search_magazines($data)
     {
-        $request = $this->db->prepare('SELECT * FROM Magazines WHERE Name LIKE :name;');
-        $request->bindValue(':name', '%' . $name . '%');
+        $query = 'SELECT * FROM Magazines WHERE Name LIKE :name  AND Genre LIKE :genre ';
+        if ($data['pricesort'] == 'asc')
+        {
+            $query .= 'ORDER BY Price, Name ';
+        }
+        else if ($data['pricesort'] == 'desc')
+        {
+            $query .= 'ORDER BY Price DESC, Name ';
+        }
+        else
+        {
+             $query .= 'ORDER BY Name ';
+        }
+        $query .= ';';
+        $request = $this->db->prepare($query);
+        $request->bindValue(':name', '%' . $data['name'] . '%');
+        $request->bindValue(':genre', '%' . $data['genre'] . '%');
         $result = $request->execute();
         if (!$result)
         {
