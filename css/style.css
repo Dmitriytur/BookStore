@@ -67,6 +67,9 @@
 .size {
 	height: 180px;
 }
+.img-details {
+	height: 180px;
+}
 .red {
 	border: none !important;
 	background-color: #d9534f !important;

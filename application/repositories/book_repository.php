@@ -32,10 +32,14 @@ class Book_Repository
         return $result;
     }
 
-    function search_books_by_name($name)
+    function search_books($data)
     {
-        $request = $this->db->prepare('SELECT * FROM Books WHERE Name LIKE :name;');
-        $request->bindValue(':name', '%' . $name . '%');
+        $query = 'SELECT * FROM Books WHERE (Name LIKE :name or Author LIKE :author or Genre LIKE :genre)';
+        $query .= ';';
+        $request = $this->db->prepare($query);
+        $request->bindValue(':name', '%' . $data[0] . '%');
+        $request->bindValue(':author', '%' . $data[1] . '%');
+        $request->bindValue(':genre', '%' . $data[2] . '%');
         $result = $request->execute();
         if (!$result)
         {

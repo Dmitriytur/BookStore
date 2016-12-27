@@ -1,3 +1,4 @@
+<?php include 'application/views/admin_views/header_admin.php' ?>
 <div class="container">
 	<div class="center margin-bottom-title"><h2>Adding book</h2></div>
     <form method="post" action="" id="add-post">
@@ -51,7 +52,7 @@
 				</div>
 				<div class="form-group" id="file-upload">
 					<label for="book_image">Uploading the image: </label><br/>
-					<input type="file" id="uploade-file" name="uploade-file" multiple="multiple">
+					<input type="file" id="uploade-file" name="uploade-file" accept="image/jpeg,image/png,image/gif">
 				</div>
 			</div>
 		</div>

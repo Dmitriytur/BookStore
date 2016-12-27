@@ -25,6 +25,7 @@ class Controller_Books extends Controller
 	{
 		$data = array();
         $data = json_decode($_POST['data']);
+		error_log (json_encode($data));
         $this->view->generate_partial('customer_views/cbook_partial_view.php', $this->model->search_books($data));
 	}
 }

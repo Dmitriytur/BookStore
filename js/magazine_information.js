@@ -1,6 +1,6 @@
 function search_magazine()
 {
-        var name = document.getElementById('search').value;
+        var name = document.getElementById('search_name').value;
         var data = JSON.stringify([name]);
         $.ajax({
             url: '/magazines/search',

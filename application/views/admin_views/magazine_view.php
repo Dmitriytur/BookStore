@@ -1,3 +1,4 @@
+<?php include 'application/views/admin_views/header_admin.php' ?>
 <div class="container">
 	<div class="center margin-bottom-title"><h2>Adding magazine</h2></div>
     <form method="post" action="" id="add-post">
@@ -27,7 +28,7 @@
 				</div>
 				<div class="form-group" id="file-upload">
 					<label for="book_image">Uploading the image: </label><br/>
-					<input type="file" id="uploade-file" name="uploade-file" multiple="multiple">
+					<input type="file" id="uploade-file" name="uploade-file" accept="image/jpeg,image/png,image/gif">
 				</div>
 			</div>
 		</div>
@@ -40,15 +41,11 @@
     </form>
 	<br/><br/><br/>
 	
-	
-	
 	<div class="col-md-12 v-space"></div>
 	<hr/>
 	<div class="col-md-12 center margin-bottom-title"><h2>All magazines</h2></div>
-<<<<<<< HEAD
 	
 </div>
-=======
 	<div id="container_magazines">
 	<?php
 		include('application/views/admin_views/magazine_list_partial_view.php');
@@ -57,4 +54,3 @@
 	</div>
 </div>
 <script src = "/js/magazine_operations.js"></script>
->>>>>>> e78c9147f0dda40e02a790e5b1cbd459a10ddf8f
