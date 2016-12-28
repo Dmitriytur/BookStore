@@ -10,36 +10,6 @@ if (($data['page']-1)*6 >= $maxrow)
 $start = ($data['page'] - 1) * 6;
 
 
-$partial_view_result .= 
-            '<div class="row">
-				<div class="col-md-12">
-					<ul class="pagination">
-						<li onclick="prev_page()" ><a><span class="glyphicon glyphicon-menu-left"></span></a></li>';
-$maxpage =  intdiv($maxrow, 6);
-if ($maxrow % 6 != 0)
-{
-    $maxpage++;
-}
-$pagecout = 0;
-for ($i = $data['page']  - 2; $pagecout < 6 && $i <= $maxpage ; $i++, $pagecout++)
-{
-    if ($i <= 0)
-    {
-        $pagecout--;
-        continue;
-    }
-    $partial_view_result .=  '<li onclick="go_page(' . $i . ')"' . ($i == $data['page'] ?  'id="active_page" class="active"> ' : '>') . '<a>' . $i . '</a></li>';
-						
-}
-$partial_view_result .= '<li onclick="next_page()"><a><span class="glyphicon glyphicon-menu-right"></span></a></li>
-					</ul>
-				</div>
-			</div>
-            <input type="hidden" id="current_page" value="' . $data['page'] . '">
-            <input type="hidden" id="max_page" value="' . $maxpage . '">';
-
-
-
 for ($i = $start; $i < $maxrow && $i < $start + 6 ;$i++ )
 {
     if ($i % 3 == 0)
@@ -72,3 +42,32 @@ if (!$end)
 {
     $partial_view_result .= '</div>';
 }
+
+
+$partial_view_result .= 
+            '<div class="row">
+				<div class="col-md-12">
+					<ul class="pagination">
+						<li onclick="prev_page()" ><a><span class="glyphicon glyphicon-menu-left"></span></a></li>';
+$maxpage =  intdiv($maxrow, 6);
+if ($maxrow % 6 != 0)
+{
+    $maxpage++;
+}
+$pagecout = 0;
+for ($i = $data['page']  - 2; $pagecout < 6 && $i <= $maxpage ; $i++, $pagecout++)
+{
+    if ($i <= 0)
+    {
+        $pagecout--;
+        continue;
+    }
+    $partial_view_result .=  '<li onclick="go_page(' . $i . ')"' . ($i == $data['page'] ?  'id="active_page" class="active"> ' : '>') . '<a>' . $i . '</a></li>';
+						
+}
+$partial_view_result .= '<li onclick="next_page()"><a><span class="glyphicon glyphicon-menu-right"></span></a></li>
+					</ul>
+				</div>
+			</div>
+            <input type="hidden" id="current_page" value="' . $data['page'] . '">
+            <input type="hidden" id="max_page" value="' . $maxpage . '">';
