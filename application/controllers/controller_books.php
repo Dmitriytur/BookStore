@@ -10,7 +10,7 @@ class Controller_Books extends Controller
 
 	function action_index()
 	{	
-		$this->view->generate('customer_views/customer_book_view.php', 'template_view.php', $this->model->get_all_books());
+		$this->view->generate('customer_views/customer_book_view.php', 'template_view.php', $this->model->load_books());
 	}
 
 	function action_details($params)

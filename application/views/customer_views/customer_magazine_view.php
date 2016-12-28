@@ -27,19 +27,6 @@
 			include('application/views/customer_views/cmagazine_partial_view.php');
 			echo $partial_view_result;
 			?>
-			<div class="row">
-				<div class="col-md-12">
-					<ul class="pagination">
-						<li><a href="#"><span class="glyphicon glyphicon-menu-left"></span></a></li>
-					    <li><a href="#">1</a></li>
-					    <li class="active"><a href="#">2</a></li>
-					    <li><a href="#">3</a></li>
-					    <li><a href="#">4</a></li>
-					    <li><a href="#">5</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-menu-right"></span></a></li>
-					</ul>
-				</div>
-			</div>
 	</div>
 	
 	<div class="col-md-3">
@@ -48,7 +35,8 @@
 			<input type="radio" id="asc" name="price" value="coloured illustration"> ascending sort<br/>
 			<input type="radio" id="desc" name="price" value="black-and-white"> descending sort<br/>
 		</div>
-			<button type="button" id="clear" class="btn btn-success">Clear filters</button>
+		<button type="button" id="search_f" class="btn btn-success"> Apply filters</button>
+		<button type="button" id="clear" class="btn btn-info">Clear filters</button>
 	</div>
 	<div class="col-md-12 v-space"></div>
 	<div class="col-md-12 v-space"></div>

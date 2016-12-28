@@ -9,9 +9,10 @@ class Model_Magazines extends Model
         $this->magazines_rep = new Magazine_Repository();
     }
 
-    function get_all_magazines()
+    function load_magazines()
     {
-        return $this->magazines_rep->get_all_magazines();
+        $res = $this->magazines_rep->get_all_magazines();
+        return array("table" => $res, "page" => 1);
     }
 
     function get_magazine_by_id($id)
@@ -20,6 +21,7 @@ class Model_Magazines extends Model
     }
     function search_magazines($data)
     {
-         return $this->magazines_rep->search_magazines($data);
+        $res = $this->magazines_rep->search_magazines($data);
+        return array("table" => $res, "page" => $data['page']); 
     }
 }

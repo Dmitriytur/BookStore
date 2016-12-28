@@ -11,9 +11,10 @@ class Model_Admin extends Model
         $this->magazines_rep = new Magazine_Repository();
     }
 
-    function get_all_books()
+    function load_books($page)
     {
-        return $this->books_rep->get_all_books();
+        $res = $this->books_rep->get_all_books();
+        return array("table" => $res, "page" => $page);
     }
 
     function add_book($book)
@@ -27,9 +28,10 @@ class Model_Admin extends Model
 
     }
 
-    function get_all_magazines()
+    function load_magazines($page)
     {
-        return $this->magazines_rep->get_all_magazines();
+        $res = $this->magazines_rep->get_all_magazines();
+        return array("table" => $res, "page" => $page);
     }
 
     function add_magazine($magazine)

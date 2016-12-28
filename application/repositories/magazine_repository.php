@@ -1,14 +1,7 @@
 <?php
-class Magazine_Repository
+require_once ('application/repositories/repository.php');
+class Magazine_Repository extends Repository
 {
-    const DB_NAME = "PHP_Proj.db";
-    private $db;
-
-    function __construct()
-    {
-        $this->db = new SQlite3(self::DB_NAME);
-    }
-
     public function get_all_magazines()
     {
         $request = $this->db->prepare('SELECT * FROM Magazines ORDER BY Name');
@@ -17,7 +10,7 @@ class Magazine_Repository
         {
             return;
         }
-        return $result;
+        return $this->convert_to_array($result);
     }
 
     function get_magazine_by_id($id)
@@ -56,7 +49,7 @@ class Magazine_Repository
         {
             return;
         }
-        return $result;
+        return $this->convert_to_array($result);
     }
     
     function add_magazine($magazine)
@@ -69,11 +62,6 @@ class Magazine_Repository
             $request->bindValue(':' . $i, $magazine[$i]);
         }
         $result = $request->execute();
-        if (!$result)
-        {
-            return;
-        }
-        return $result;
     }
 
     function delete_magazine($id)

@@ -38,7 +38,7 @@ $(document).ready(function(){
             url: '/admin/add_book',
             type: 'post',
             dataType: 'json',
-            data: 'data=' + data,
+            data: 'data=' + data +'&page=' + $("#current_page").val(),
             success: function(response) {
                 $('#container_books').html(response.html);
             }
@@ -52,9 +52,33 @@ function delete_book(id)
             url: '/admin/delete_book',
             type: 'post',
             dataType: 'json',
-            data: 'data=' + data,
+            data: 'data=' + data +'&page=' + $("#current_page").val(),
             success: function(response) {
                 $('#container_books').html(response.html);
             }
         });
+}
+
+function go_page(page) 
+{
+    if (page > 0 && page <= $("#max_page").val())
+    {
+        $.ajax({
+            url: '/admin/book',
+            type: 'get',
+            dataType: 'json',
+            data: 'page=' + page,
+            success: function(response) {
+                $('#container_books').html(response.html);
+            }
+        });
+    }
+}
+function next_page() 
+{
+    go_page(parseInt($("#current_page").val()) + 1);
+}
+function prev_page() 
+{
+    go_page($("#current_page").val() - 1);
 }

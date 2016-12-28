@@ -1,14 +1,7 @@
 <?php
-    class Customer_Repository
+require_once ('application/repositories/repository.php');
+    class Customer_Repository extends Repository
     {
-
-        const DB_NAME = "PHP_Proj.db";
-        private $db;
-
-        function __construct()
-        {
-            $this->db = new SQlite3(self::DB_NAME);
-        }
 
         function get_all_customers()
         {

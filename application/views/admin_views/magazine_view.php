@@ -14,8 +14,9 @@
 				</div>
 				<div class="form-group">
 					<label for="annotation">Annotation</label>
-					<textarea class="form-control" name="annotation" placeholder="Annotation">Annotation</textarea>
+					<textarea class="form-control" id="annotation" name="annotation" placeholder="Annotation">Annotation</textarea>
 				</div>
+				
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
@@ -25,6 +26,10 @@
 				<div class="form-group">
 					<label for="price">Price</label>
 					<input type="number" class="form-control" id="price" name="price" required placeholder="Price">
+				</div>
+				<div class="form-group">
+					<label for="amount">Amount</label>
+					<input type="number" class="form-control" id="amount" name="amount" required placeholder="Amount">
 				</div>
 				<div class="form-group" id="file-upload">
 					<label for="book_image">Uploading the image: </label><br/>
@@ -44,13 +49,12 @@
 	<div class="col-md-12 v-space"></div>
 	<hr/>
 	<div class="col-md-12 center margin-bottom-title"><h2>All magazines</h2></div>
-	
-</div>
 	<div id="container_magazines">
 	<?php
 		include('application/views/admin_views/magazine_list_partial_view.php');
 		echo $partial_view_result;
 	?>
 	</div>
+</div>
 </div>
 <script src = "/js/magazine_operations.js"></script>

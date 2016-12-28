@@ -1,23 +1,12 @@
 <?php
-class Book_Repository
+require_once ('application/repositories/repository.php');
+class Book_Repository extends Repository
 {
-    const DB_NAME = "PHP_Proj.db";
-    private $db;
-
-    function __construct()
-    {
-        $this->db = new SQlite3(self::DB_NAME);
-    }
-
     public function get_all_books()
     {
         $request = $this->db->prepare('SELECT * FROM Books ORDER BY Name');
         $result = $request->execute();
-        if (!$result)
-        {
-            return;
-        }
-        return $result;
+        return $this->convert_to_array($result);
     }
 
     function get_book_by_id($id)
@@ -25,10 +14,6 @@ class Book_Repository
         $request = $this->db->prepare('SELECT * FROM Books WHERE Id=:id;');
         $request->bindValue(':id', $id);
         $result = $request->execute();
-        if (!$result)
-        {
-            return;
-        }
         return $result;
     }
 
@@ -56,7 +41,7 @@ class Book_Repository
             $query .= ') ';
             $i = false;
         }
-        if ($data['coloured'] || $data['black_and_white'] || $data['stiff'])
+        if ($data['coloured'] || $data['black_and_white'] || $data['without'])
         {
              $query .= 'AND ( ';
             if ($data['coloured'])
@@ -70,7 +55,7 @@ class Book_Repository
                 {
                      $query .= 'OR ';
                 }
-                 $query .= 'Bindings="black_and_white" ';
+                 $query .= 'Images="black_and_white" ';
                  $i = true;
             }
             if ($data['without'])
@@ -79,7 +64,7 @@ class Book_Repository
                 {
                      $query .= 'OR ';
                 }
-                 $query .= 'Bindings="without" ';
+                 $query .= 'Images="without" ';
                  $i = true;
             }
             $query .= ') ';
@@ -103,11 +88,7 @@ class Book_Repository
         $request->bindValue(':author', '%' . $data['author'] . '%');
         $request->bindValue(':genre', '%' . $data['genre'] . '%');
         $result = $request->execute();
-        if (!$result)
-        {
-            return;
-        }
-        return $result;
+        return $this->convert_to_array($result);
     }
     
     function add_book($book)
@@ -120,11 +101,6 @@ class Book_Repository
             $request->bindValue(':' . $i, $book[$i]);
         }
         $result = $request->execute();
-        if (!$result)
-        {
-            return;
-        }
-        return $result;
     }
 
     function delete_book($id)
