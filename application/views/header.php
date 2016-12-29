@@ -22,7 +22,7 @@
       {
         echo '<li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-			<span class="glyphicon glyphicon-user"></span>Hello, ' . $_SESSION['first_name'] . '!
+			<span class="glyphicon glyphicon-user"></span> Hello, ' . $_SESSION['first_name'] . '!
 			<span class="caret"></span>
 		</a>
         <ul class="dropdown-menu">
@@ -30,7 +30,7 @@
           <li><a href="/profile/change_password">Change password</a></li>
         </ul>
       </li>
-        <li><a href="/profile/logout"><span class="glyphicon glyphicon-log-out"></span>Log out</a></li>';
+        <li><a href="/profile/logout"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>';
       }
       else
       {

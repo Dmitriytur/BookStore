@@ -11,7 +11,17 @@ $book = $data->fetchArray();
 	</div>
 	<div class="row">
 		<div class="col-md-3">
-			<img class="img-rounded size-big"src="/img/book<?php echo $book['Id'] ?>.jpg" alt="book" />
+		<?php
+
+		if (file_exists('img/book' . $book['Id'] . '.jpg'))
+		{
+			echo '<img class="img-rounded size-big"src="/img/book' . $book['Id'] . '.jpg" alt="book" />';
+		}
+		else
+		{
+			echo '<img class="img-rounded size-big"src="/img/book_default.png" alt="book" />';
+		}
+		?>
 		</div>
 		<div class="col-md-6">
 			<input type="hidden" id="book_id" value="<?php echo $book['Id'] ?>">

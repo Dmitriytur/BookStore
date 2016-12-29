@@ -59,7 +59,7 @@
 		<div class="row">
 			<div class="col-md-10"></div>
 			<div class="col-md-2">
-				<button type="submit" class="btn btn-success right" id="add">Add book</button>
+				<button type="button" class="btn btn-success right" id="add">Add book</button>
 			</div>
 		</div>
     </form>
@@ -67,7 +67,7 @@
 	
 	
 	
-	<div class="col-md-12 v-space"></div>
+	<div class="col-md-12 v-space v-negative-space"></div>
 	<hr/>
 	<div class="col-md-12 center margin-bottom-title"><h2>All books</h2></div>
 	<div id="container_books">

@@ -11,7 +11,7 @@
 		<div class="row">
 			<div class="col-md-2 right-text-align">
 				<a href="/profile/orders">Books ordering history</a>
-				<a href="/profile/subscriptions">Current subscriptions</a>
+				<a href="/profile/subscriptions" hidden>Current subscriptions</a>
 			</div>
 			<div class="col-md-4">
 				<p> <span class="bold">First name: </span><?php echo $_SESSION['first_name'] ?></p>

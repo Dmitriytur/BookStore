@@ -46,7 +46,7 @@
     </form>
 	<br/><br/><br/>
 	
-	<div class="col-md-12 v-space"></div>
+	<div class="col-md-12 v-space v-negative-space"></div>
 	<hr/>
 	<div class="col-md-12 center margin-bottom-title"><h2>All magazines</h2></div>
 	<div id="container_magazines">

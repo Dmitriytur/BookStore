@@ -47,7 +47,7 @@
 			<input type="radio" id="desc" name="price" value="black-and-white"> descending sort<br/>
 		</div>
 		<button type="button" id="search_f" class="btn btn-success"> Apply filters</button>
-		<button type="button" id="clear" class="btn btn-info">Clear filters</button>
+		<button type="button" id="clear" class="btn btn-default">Clear filters</button>
 	</div>
 	<div class="col-md-12 v-space"></div>
 	<div class="col-md-12 v-space"></div>

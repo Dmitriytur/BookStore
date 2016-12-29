@@ -13,7 +13,7 @@
 				<h2>Personal data</h2>
 					<input type="text" class="form-control" id="first_name" name="first_name" required value="<?php echo $_SESSION['first_name'] ?>"><br/>
 					<input type="text" class="form-control" id="second_name" name="second_name" required value="<?php echo $_SESSION['second_name'] ?>"><br/>
-					<textarea class="form-control" id="address" name="address" value="<?php echo $_SESSION['address'] ?>">Address</textarea>
+					<textarea class="form-control" id="address" name="address" ><?php echo $_SESSION['address'] ?></textarea>
 					<a href="/profile">
 						<input type="button" class="btn btn-default right-btn reg-button" value="Cancel">
 					</a>

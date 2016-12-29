@@ -11,7 +11,17 @@ $magazine = $data->fetchArray();
 	<div class="col-md-12 v-space"></div>
 	<div class="row">
 		<div class="col-md-3">
-			<img class="img-rounded size-big" src="/img/magazine<?php echo $magazine['Id'] ?>.jpg" alt="magazine" />
+		<?php
+
+		if (file_exists('img/magazine' . $magazine['Id'] . '.jpg'))
+		{
+			echo '<img class="img-rounded size-big"src="/img/magazine' . $magazine['Id'] . '.jpg" alt="book" />';
+		}
+		else
+		{
+			echo '<img class="img-rounded size-big"src="/img/book_default.png" alt="book" />';
+		}
+		?>
 		</div>
 		<div class="col-md-6">
 			<p> <span class="bold">Name: </span><?php echo $magazine['Id'] ?></p>

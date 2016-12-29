@@ -46,12 +46,13 @@
 	margin-top: 20px;
 }
 .big-title {
-	font-size: 100px;
+	font-size: 80px;
 	margin-top: 80px;
 }
 .image-main {
 	float: right;
 	margin-top: 10px;
+	height: 230px;
 }
 .quote {
 	text-align: right;
@@ -145,4 +146,7 @@
 .success
 {
 	margin-top: 10px;
+}
+.v-negative-space {
+	margin-top: -30px;
 }

@@ -18,9 +18,17 @@ for ($i = $start; $i < count($table) && $i < $start + 6 ;$i++ )
     $partial_view_result = $partial_view_result . 
         '<div class="col-md-4">
             <div class="thumbnail">
-						<div class="caption center">
-							<img class="img-rounded little-down size" src="img/book' . $row["Id"] . '.jpg" alt="book" />
-							<p><span class="thumbnail-bold">Name: </span>' . $row["Name"] . '</p>
+						<div class="caption center">';
+    if (file_exists('img/book' . $row["Id"] . '.jpg'))
+    {
+        $partial_view_result .=	'<img class="img-rounded little-down size" src="img/book' . $row["Id"] . '.jpg" alt="book" />';
+    }
+    else
+    {
+        $partial_view_result .=	'<img class="img-rounded little-down size" src="img/book_default.png" alt="book" />';
+    }
+			 
+	$partial_view_result .=	'<p><span class="thumbnail-bold">Name: </span>' . $row["Name"] . '</p>
 							<p><span class="thumbnail-bold">Author: </span>' . $row["Author"] . '</p>
 							<p><span class="thumbnail-bold">Price: </span>' . $row["Price"] . '$</p>
 							 <a href="/books/details?id=' . $row['Id'] . '">
