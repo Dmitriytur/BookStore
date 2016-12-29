@@ -26,4 +26,21 @@ class Controller_Books extends Controller
         $data =  json_decode($_GET['data'], true);
         $this->view->generate_partial('customer_views/cbook_partial_view.php', $this->model->search_books($data));
 	}
+
+	function action_buy()
+	{
+		session_start();
+		if (isset($_SESSION['is_started']) && $_SESSION['is_started'])
+		{
+            $book_id = $_POST['book_id'];
+			$today= date("d.m.y"); 
+			$this->model->make_order(array("userId" => $_SESSION['userId'], "bookId" => $book_id, "date" => $today));
+			echo 'success';
+		}
+		else
+		{
+			session_destroy();
+			header('Location:/login');
+		}
+	}
 }

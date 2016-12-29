@@ -14,6 +14,7 @@ $book = $data->fetchArray();
 			<img class="img-rounded size-big"src="/img/book<?php echo $book['Id'] ?>.jpg" alt="book" />
 		</div>
 		<div class="col-md-6">
+			<input type="hidden" id="book_id" value="<?php echo $book['Id'] ?>">
 			<p> <span class="bold">Name: </span><?php  echo $book['Name']  ?></p>
 			<p> <span class="bold">Author: </span><?php  echo $book['Author'] ?></p>
 			<p> <span class="bold">Pages: </span><?php  echo $book['Pages'] ?></p>
@@ -23,11 +24,11 @@ $book = $data->fetchArray();
 			<p> <span class="bold">Year: </span><?php  echo $book['Year'] ?></p>
 			<p> <span class="bold">Price: </span><?php  echo $book['Price'] ?>$</p>
 			<p> <span class="bold">Annotation: </span><?php  echo $book['Annotation'] ?></p>
-			<a href="#">
-				<button type="submit" class="btn btn-success">Make an order</button>
-			</a>
+			<button type="button" id="buy_book" class="btn btn-success">Make an order</button>
+			<div id="massage" class="alert alert-success success" style="opacity:0;">Ordered successfully</div>
 		</div>
 	</div>
 		<div class="col-md-12 v-space"></div>
 		<div class="col-md-12 v-space"></div>
 </div>
+<script src = "/js/book_order.js"></script>

@@ -1,5 +1,5 @@
 <?php include 'application/views/header.php' ?>
-<form id="registration" method="post" action="/customer_registration/register">
+<form id="registration" method="post" action="/registration/register">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4"></div>
@@ -12,7 +12,7 @@
 						<input type="password" class="form-control" id="password" name="password" required placeholder="Password"><br/>
 						<input type="password" class="form-control" id="confirm_password" name="confirm_password" required placeholder="Confirm password"><br/>
 						<textarea class="form-control" id="address" name="address" placeholder="Address">Address</textarea>
-						<button type="submit" class="btn btn-success right-btn" id="register" onclick="">Register</button>
+						<button type="submit" class="btn btn-success right-btn reg-button" id="register" onclick="">Register</button>
 					</div>
 				</div>
 			<div class="col-md-4"></div>

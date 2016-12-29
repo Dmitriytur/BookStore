@@ -133,3 +133,16 @@
 .search-form input {
 	margin-right: 30px;
 }
+
+.warning
+{
+	margin-bottom: 10px;
+}
+.reg-button
+{
+	margin: 10px 5px 0 5px;
+}
+.success
+{
+	margin-top: 10px;
+}

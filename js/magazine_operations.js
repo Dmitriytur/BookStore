@@ -50,9 +50,9 @@ function go_page(page)
 }
 function next_page() 
 {
-    go_page(parseInt($("#current_page").val()) + 1);
+    go_page($("#max_page").val());
 }
 function prev_page() 
 {
-    go_page($("#current_page").val() - 1);
+    go_page(1);
 }

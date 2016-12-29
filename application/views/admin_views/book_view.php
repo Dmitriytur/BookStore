@@ -1,7 +1,7 @@
 <?php include 'application/views/admin_views/header_admin.php' ?>
 <div class="container">
 	<div class="center margin-bottom-title"><h2>Adding book</h2></div>
-    <form method="post" action="" id="add-post">
+    <form method="post" action="/admin/add_book_f" id="add-post">
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
@@ -59,7 +59,7 @@
 		<div class="row">
 			<div class="col-md-10"></div>
 			<div class="col-md-2">
-				<button type="button" class="btn btn-success right" id="add">Add book</button>
+				<button type="submit" class="btn btn-success right" id="add">Add book</button>
 			</div>
 		</div>
     </form>

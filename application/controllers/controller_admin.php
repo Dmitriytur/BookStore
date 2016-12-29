@@ -7,6 +7,13 @@ class Controller_Admin extends Controller
     {
         $this->model = new Model_Admin();
         $this->view = new View();
+        session_start();
+		
+		if ( $_SESSION['userId'] != 1 )
+		{
+            session_destroy();
+			header('Location:/login');
+		}
     }
     function action_index()
 	{	
@@ -45,6 +52,11 @@ class Controller_Admin extends Controller
         $this->view->generate_partial('admin_views/book_list_partial_view.php', $this->model->load_books($page));
     }
 
+    function action_add_book_f()
+    {
+
+    }
+
     function action_delete_book()
     {
         $data = json_decode($_POST['data']);
@@ -67,6 +79,12 @@ class Controller_Admin extends Controller
         $page = $_POST['page'];
         $this->model->delete_magazine($data);
         $this->view->generate_partial('admin_views/magazine_list_partial_view.php', $this->model->load_magazines($page));
+    }
+
+    function action_logout()
+    {
+        session_destroy();
+        header('Location:/home');
     }
 
     

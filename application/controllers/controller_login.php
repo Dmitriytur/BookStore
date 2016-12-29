@@ -2,40 +2,56 @@
 
 class Controller_Login extends Controller
 {
-	
+	function __construct()
+    {
+        $this->model = new Model_Login();
+        $this->view = new View();
+    }
 	function action_index()
 	{
-		//$data["login_status"] = "";
+		$this->view->generate("authorization_views/authorization_view.php", "template_view.php");
+	}
 
-		if(isset($_POST['login']) && isset($_POST['password']))
+	function action_enter()
+	{
+		$email = $_POST['email'];
+		$password = $_POST['password'];
+		$customer = $this->model->get_customer_by_email($email);
+		if (count($customer) > 0)
 		{
-			$login = $_POST['login'];
-			$password =$_POST['password'];
-			
-			/*
-			Производим аутентификацию, сравнивая полученные значения со значениями прописанными в коде.
-			Такое решение не верно с точки зрения безопсаности и сделано для упрощения примера.
-			Логин и пароль должны храниться в БД, причем пароль должен быть захеширован.
-			*/
-			if($login=="admin" && $password=="12345")
+			$user = $customer[0];
+			if ($user['Password'] == $password)
 			{
-				$data["login_status"] = "access_granted";
+
+				session_start();
 				
-				session_start(); echo $_SESSION['admin'];
-				$_SESSION['admin'] = $password;
-				header('Location:/admin/');
+				$_SESSION['is_started'] = true;
+				 $_SESSION['userId'] = $user['Id'];
+				$_SESSION['first_name'] = $user['FirstName'];
+				$_SESSION['second_name'] = $user['SecondName'];
+				$_SESSION['email'] = $user['Email'];
+				$_SESSION['address'] = $user['Address'];
+				if ($_SESSION['userId'] == 1)
+				{
+					header("Location:/admin");
+				}
+				else
+				{
+					header("Location:/home");
+				}
+				return;
 			}
 			else
 			{
-				$data["login_status"] = "access_denied";
+				$this->view->generate("authorization_views/authorization_view.php", "template_view.php", "password");
+				return;
 			}
 		}
 		else
 		{
-			$data["login_status"] = "";
+			$this->view->generate("authorization_views/authorization_view.php", "template_view.php",  "email");
+			return;
 		}
-		
-		$this->view->generate('login_view.php', 'template_view.php', $data);
 	}
 	
 }

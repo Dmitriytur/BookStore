@@ -1,12 +1,15 @@
 <?php
 require_once ('application/repositories/book_repository.php');
+require_once ('application/repositories/order_repository.php');
 class Model_Books extends Model
 {
     public $books_rep;
+    public $orders_rep;
 
     function __construct()
     {
         $this->books_rep = new Book_Repository();
+        $this->orders_rep = new Order_Repository();
     }
 
     function load_books()
@@ -22,5 +25,10 @@ class Model_Books extends Model
     {
         $res = $this->books_rep->search_books($data);
         return array("table" => $res, "page" => $data['page']); 
+    }
+
+    function make_order($data)
+    {
+        $this->orders_rep->add_order($data);
     }
 }
